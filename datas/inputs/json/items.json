@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Livre",
+        "category": "Littérature",
+        "price": 15.99,
+        "quantity": 50
+    },
+    {
+        "name": "Ordinateur portable",
+        "category": "Électronique",
+        "price": 799.99,
+        "quantity": 10
+    },
+    {
+        "name": "Téléphone mobile",
+        "category": "Électronique",
+        "price": 499.99,
+        "quantity": 20
+    },
+    {
+        "name": "Chaussures de sport",
+        "category": "Vêtements",
+        "price": 69.99,
+        "quantity": 30
+    },
+    {
+        "name": "Cahier",
+        "category": "Fournitures scolaires",
+        "price": 2.99,
+        "quantity": 100
+    },
+    {
+        "name": "Montre",
+        "category": "Accessoires",
+        "price": 49.99,
+        "quantity": 15
+    },
+    {
+        "name": "Enceinte Bluetooth",
+        "category": "Électronique",
+        "price": 39.99,
+        "quantity": 25
+    },
+    {
+        "name": "T-shirt",
+        "category": "Vêtements",
+        "price": 19.99,
+        "quantity": 40
+    },
+    {
+        "name": "Sac à dos",
+        "category": "Accessoires",
+        "price": 29.99,
+        "quantity": 10
+    },
+    {
+        "name": "Stylo",
+        "category": "Fournitures scolaires",
+        "price": 1.49,
+        "quantity": 200
+    }
+]
