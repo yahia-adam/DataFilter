@@ -1,9 +1,9 @@
 # Projet: data filter
 
+## Description
+
 Le but de ce projet est de créer un programme permettant de charger, sauvegarder, filtrer,
 trier et afficher des données depuis des fichiers au format CSV Json XML ou yaml.
-
-## Description
 
 ## Requirements
 
