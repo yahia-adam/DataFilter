@@ -7,7 +7,9 @@ trier et afficher des données depuis des fichiers au format CSV Json XML ou yam
 
 ## Requirements
 
-requirements/requirement.txt
+```
+cat requirements/requirement.txt
+```
 
 ## Installation
 
