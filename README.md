@@ -2,8 +2,8 @@
 
 ## Description
 
-Le but de ce projet est de créer un programme permettant de charger, sauvegarder, filtrer,
-trier et afficher des données depuis des fichiers au format CSV Json XML ou yaml.
+The aim of this project is to create a program for loading, saving, filtering,
+sort and display data from files in CSV Json XML or yaml format.
 
 ## Requirements
 
@@ -13,23 +13,25 @@ cat requirements/requirement.txt
 
 ## Installation
 
-Make sure you have `python3`, `pip`, `venv` if not:
-
-    ```
-    sudo apt install python3 python3-pip python3-venv               # Ubuntu/debian 
-    ```
-    ```
-    sudo dnf install python3 python3-pip python3-venv               # red hat
-    ```
+#### If you don't have `python3`, `pip`, `venv`, `git`:
 
 ```
-git clone git@github.com:yahia-adam/DataFilter.git          #Clone Repository 
+sudo apt install python3 python3-pip python3-venv git       # Ubuntu/debian 
+```
+```
+sudo dnf install python3 python3-pip python3-venv git       # red hat
+```
 
-cd DataFilter                                               #Change to project Root Directory
+ #### Clone Repository 
 
-python3 -m venv env                                         #Create python virtual envirements 
+```
+git clone git@github.com:yahia-adam/DataFilter.git          # Clone Repository 
 
-pip install -r ./requirements/dependencies.txt               #Install project dependencies
+cd DataFilter                                               # Change to project Root Directory
+
+python3 -m venv env                                         # Create python virtual envirements 
+
+pip install -r ./requirements/dependencies.txt              # Install project dependencies
 ```
 
 ## Usage
