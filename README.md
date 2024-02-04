@@ -27,12 +27,14 @@ python3 src/main.py
 ## Directory structure
 
 ```
-|-- README              <- Project README
-|-- datas               <- Project datas
-|   |-- inputs          <- Input datas
-|   |-- outputs         <- Output datas
-|-- src                 <- Source files
-|-- Sujet               <- project details
-|   |-- Sujet.pdf       <- Project Sujet
-|   |-- Syllabus.pdf    <- Project Syllabus
+|-- datas                 <- Project datas
+|   |-- inputs            <- Input datas
+|   |-- outputs           <- Output datas
+|-- src                   <- Source files
+|-- requirements          <- Project dependencies
+|   |-- requirement.txt   <- python requirements
+|-- Sujet                 <- project details
+|   |-- Sujet.pdf         <- Project Sujet
+|   |-- Syllabus.pdf      <- Project Syllabus
+|-- README                <- Project README
 ```
