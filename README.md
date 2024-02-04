@@ -7,14 +7,12 @@ sort and display data from files in CSV Json XML or yaml format.
 
 ## Requirements
 
+### See requirements
 ```
-cat requirements/requirement.txt
+cat requirements/sys_requirement.txt                        # system requirements
+cat requirements/dependencies.txt                           # python dependencies
 ```
-
-## Installation
-
-#### If you don't have `python3`, `pip`, `venv`, `git`:
-
+### Install requirements
 ```
 sudo apt install python3 python3-pip python3-venv git       # Ubuntu/debian 
 ```
@@ -22,7 +20,7 @@ sudo apt install python3 python3-pip python3-venv git       # Ubuntu/debian
 sudo dnf install python3 python3-pip python3-venv git       # red hat
 ```
 
- #### Clone Repository 
+## Installation
 
 ```
 git clone git@github.com:yahia-adam/DataFilter.git          # Clone Repository 
