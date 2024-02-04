@@ -11,11 +11,11 @@ requirements/requirement.txt
 
 ## Installation
 
-`python3 -m venv env && pip install -r ./requirements/requirement.txt`
+``` python3 -m venv env && pip install -r ./requirements/requirement.txt ```
 
 ## Usage
 
-`python3 src/main.py`
+``` python3 src/main.py ```
 
 ## Directory structure
 
