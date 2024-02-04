@@ -53,3 +53,8 @@ python3 src/main.py
 |   |-- Syllabus.pdf            <- Project Syllabus
 |-- README                      <- Project README
 ```
+## Contributors ✨
+
+[<img src="https://github.com/yahia-adam.png" width="60px;"/><br/><sub><a href="https://github.com/yahia-adam">Adam</a></sub>](https://github.com/yahia-adam/DataFilter) 
+
+[<img src="https://github.com/Zameloth.png" width="60px;"/><br/><sub><a href="https://github.com/yahia-adam">Théo</a></sub>](https://github.com/Zameloth/DataFilter)
