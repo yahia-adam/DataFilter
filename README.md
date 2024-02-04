@@ -15,7 +15,10 @@ cat requirements/requirement.txt
 
 
 ```
-python3 -m venv env && pip install -r ./requirements/requirement.txt
+git clone git@github.com:yahia-adam/DataFilter.git # Clone Repository 
+cd DataFilter
+python3 -m venv env # Create python virtual envirements 
+pip install -r ./requirements/requirement.txt # Install project dependencies
 ```
 
 ## Usage
