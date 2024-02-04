@@ -16,18 +16,12 @@ cat requirements/requirement.txt
 
 ```
 git clone git@github.com:yahia-adam/DataFilter.git          #Clone Repository 
-```
 
-```
-cd DataFilter
-```
+cd DataFilter                                               #Change to project Root Directory
 
-```
-python3 -m venv env             #Create python virtual envirements 
-```
+python3 -m venv env                                         #Create python virtual envirements 
 
-```
-pip install -r ./requirements/requirement.txt           #Install project dependencies
+pip install -r ./requirements/requirement.txt               #Install project dependencies
 ```
 
 ## Usage
