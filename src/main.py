@@ -1,6 +1,7 @@
 from outils import upload_file
 from outils import save_file
 from outils import find_min
+from outils import find_max
 
 if __name__ == "__main__":
     datas = upload_file.upload_file("C:\\Users\\csalhab\\OneDrive\\Online Sessions\\3iabd1\\Scripting "
@@ -9,7 +10,7 @@ if __name__ == "__main__":
         exit()
     else:
         #print(datas['students'])
-        x = find_min.find_min(datas)
+        x = find_max.find_max(datas)
         print(x)
 
         # pour acceder au valeur du json
