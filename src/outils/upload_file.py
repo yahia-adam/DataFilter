@@ -5,6 +5,7 @@ Fevrier 2024
 """
 
 import csv, json, yaml
+import xml.etree.ElementTree as ET
 
 
 # upload_file function used to upload csv, json, xml and yaml files and returns its content
@@ -32,3 +33,10 @@ def upload_file(file):
             # in this case a dictionary
             file_content = yaml.safe_load(f)
         return file_content
+
+    # A checker :
+    # https://docs.python.org/3/library/xml.etree.elementtree.html
+    elif file.endswith('.xml'):
+        t = ET.parse(file)
+        r = t.getroot()
+        return r
