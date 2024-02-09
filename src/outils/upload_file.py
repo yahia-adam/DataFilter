@@ -4,7 +4,7 @@ DataFilter Project
 Fevrier 2024
 """
 
-import csv, json
+import csv, json, yaml
 
 
 # upload_file function used to upload csv, json, xml and yaml files and returns its content
@@ -23,5 +23,12 @@ def upload_file(file):
     elif file.endswith('.json'):
         with open(file, 'r') as f:
             file_content = json.load(f)
-            # return file_content
+        return file_content
+
+    # returns a dictionary containing all the yaml content
+    elif file.endswith('.yaml'):
+        with open(file, 'r') as f:
+            # parse the yaml file and produce the corresponding python object
+            # in this case a dictionary
+            file_content = yaml.safe_load(f)
         return file_content
