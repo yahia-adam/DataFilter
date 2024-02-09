@@ -30,3 +30,14 @@ def find_min(content):
                 return min(num_values)
             else:
                 raise ValueError("No values found in the file")
+    elif isinstance(content, dict):
+        for key, value in content.items():
+            if isinstance(value, list):
+                num_values = []
+                for item in value:
+                    if isinstance(item, dict):
+                        for k, v in item.items():
+                            if isinstance(v, (int, float)) and (v != True and v != False):
+                                num_values.append(v)
+                if num_values:
+                    return min(num_values)

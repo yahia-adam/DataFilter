@@ -4,11 +4,11 @@ from outils import find_min
 
 if __name__ == "__main__":
     datas = upload_file.upload_file("C:\\Users\\csalhab\\OneDrive\\Online Sessions\\3iabd1\\Scripting "
-             "Python\\DataFilter\\datas\\inputs\\json\\students.json")
+             "Python\\DataFilter\\datas\\inputs\\yaml\\students.yaml")
     if not datas:
         exit()
     else:
-
+        # print(datas['students'][0])
         x = find_min.find_min(datas)
         print(x)
 
