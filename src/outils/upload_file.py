@@ -40,3 +40,7 @@ def upload_file(file):
         t = ET.parse(file)
         r = t.getroot()
         return r
+
+    # raise value error if file format is not supported
+    else:
+        raise ValueError("File Format Not Supported".format(file))
