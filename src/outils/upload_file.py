@@ -23,4 +23,5 @@ def upload_file(file):
     elif file.endswith('.json'):
         with open(file, 'r') as f:
             file_content = json.load(f)
+            # return file_content
         return file_content
