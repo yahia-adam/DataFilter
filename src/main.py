@@ -1,4 +1,5 @@
 from outils import upload_file
+from outils import save_file
 
 if __name__ == "__main__":
     datas = upload_file.upload_file("C:\\Users\\csalhab\\OneDrive\\Online Sessions\\3iabd1\\Scripting "
@@ -25,3 +26,8 @@ if __name__ == "__main__":
         #     print("Apprentice:", apprentice)
         #     print("Grades:", grades)
         #     print()
+
+    # src = ("C:\\Users\\csalhab\\OneDrive\\Online Sessions\\3iabd1\\Scripting "
+    #        "Python\\DataFilter\\datas\\inputs\\xml\\students.xml")
+    # destination = input("test path to save in :")
+    # save_file.save_file(src, destination)
