@@ -1,8 +1,9 @@
-from outils import read_file
+from outils import upload_file
 
 if __name__ == "__main__":
-    datas = read_file.read_file("/home/adam/Documents/esgi/DataFilter/datas/inputs/json/students.json")
-    if (not datas):
+    datas = upload_file.upload_file("C:\\Users\\csalhab\\OneDrive\\Online Sessions\\3iabd1\\Scripting "
+             "Python\\DataFilter\\datas\\inputs\\csv\\students.csv")
+    if not datas:
         exit()
     for data in datas:
         print(data)
