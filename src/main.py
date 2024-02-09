@@ -4,10 +4,11 @@ from outils import find_min
 
 if __name__ == "__main__":
     datas = upload_file.upload_file("C:\\Users\\csalhab\\OneDrive\\Online Sessions\\3iabd1\\Scripting "
-             "Python\\DataFilter\\datas\\inputs\\csv\\students.csv")
+             "Python\\DataFilter\\datas\\inputs\\json\\students.json")
     if not datas:
         exit()
     else:
+
         x = find_min.find_min(datas)
         print(x)
 
