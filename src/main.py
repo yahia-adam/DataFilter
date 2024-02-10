@@ -4,20 +4,18 @@ DataFilter Project
 Fevrier 2024
 """
 
-from outils import upload_file
-from outils import save_file
-from outils import find_min
-from outils import find_max
+from src.outils.upload import upload_file
+from src.outils.stats import find_average
 
 if __name__ == "__main__":
     datas = upload_file.upload_file("C:\\Users\\csalhab\\OneDrive\\Online Sessions\\3iabd1\\Scripting "
-             "Python\\DataFilter\\datas\\inputs\\xml\\students.xml")
+             "Python\\DataFilter\\datas\\inputs\\yaml\\students.yaml")
     if not datas:
         exit()
     else:
 
-        print(datas)
-        x = find_max.find_max(datas)
+        # print(datas)
+        x = find_average.find_average(datas)
         print(x)
 
         # pour acceder au valeur du json
