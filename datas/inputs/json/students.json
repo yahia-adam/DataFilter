@@ -11,7 +11,7 @@
         "lastname": "Smith",
         "age": 21,
         "apprentice": false,
-        "grades": [75, 89, 93]
+        "grades": [23, 89, 93]
     },
     {
         "firstname": "Bob",

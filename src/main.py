@@ -7,14 +7,17 @@ Fevrier 2024
 from outils.upload import upload_file
 from outils.stats import find_average
 from outils.stats import find_percentage
+from outils.stats import find_min_list
 
 if __name__ == "__main__":
     datas = upload_file.upload_file("C:\\Users\\csalhab\\OneDrive\\Online Sessions\\3iabd1\\Scripting "
-             "Python\\DataFilter\\datas\\inputs\\json\\students.json")
+             "Python\\DataFilter\\datas\\inputs\\yaml\\students.yaml")
     if not datas:
         exit()
     else:
-        x, y = find_average.find_average(datas)
+
+        # print(datas)
+        x, y = find_min_list.find_min_list(datas)
         print(x, y)
         # print(datas)
         # a, x, y = find_percentage.find_percentage(datas)

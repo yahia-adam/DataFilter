@@ -13,7 +13,7 @@ students:
     apprentice: false
     grades:
       - 75
-      - 89
+      - 15
       - 93
   - firstname: Bob
     lastname: Johnson
