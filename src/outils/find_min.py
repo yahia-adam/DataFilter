@@ -17,7 +17,7 @@ def find_min(content):
             for row in content:
                 for value in row:
                     try:
-                        numeric_value = int(value) if value.is_integer() else float(value)
+                        numeric_value = int(value) if float(value).is_integer() else float(value)
                         num_values.append(numeric_value)
                     except ValueError:
                         pass

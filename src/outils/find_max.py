@@ -17,7 +17,7 @@ def find_max(content):
             for row in content:
                 for value in row:
                     try:
-                        numeric_value = int(value) if value.is_integer() else float(value)
+                        numeric_value = int(value) if float(value).is_integer() else float(value)
                         num_values.append(numeric_value)
                     except ValueError:
                         pass
@@ -51,15 +51,5 @@ def find_max(content):
                 else:
                     raise ValueError("No values found in the file")
     # if content is ET.element (for xml files only)
-    elif isinstance(content, ET.Element):
-        num_values = []
-        for child in content.iter():
-            if child.text.replace('.', '', 1).isdigit():
-                if '.' in child.text:
-                    num_values.append(float(child.text))
-                else:
-                    num_values.append(int(child.text))
-        if num_values:
-            return max(num_values)
-        else:
-            raise ValueError("No values found in the file")
+    # elif isinstance(content, ET.Element):
+        

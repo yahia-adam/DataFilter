@@ -1,3 +1,9 @@
+"""
+Authors : Charbel Salhab, Theo Eloy, Adam Yahia Abdchafee
+DataFilter Project
+Fevrier 2024
+"""
+
 from outils import upload_file
 from outils import save_file
 from outils import find_min
@@ -9,7 +15,8 @@ if __name__ == "__main__":
     if not datas:
         exit()
     else:
-        #print(datas['students'])
+
+        print(datas)
         x = find_max.find_max(datas)
         print(x)
 
@@ -35,3 +42,4 @@ if __name__ == "__main__":
     #        "Python\\DataFilter\\datas\\inputs\\xml\\students.xml")
     # destination = input("test path to save in :")
     # save_file.save_file(src, destination)
+
