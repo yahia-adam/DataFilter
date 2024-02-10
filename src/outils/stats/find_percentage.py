@@ -5,6 +5,8 @@ Fevrier 2024
 """
 
 
+# find_percentage function used to find the percentage number of bool fields in csv, json, xml and yaml files and
+# returns 2 percentage values
 def find_percentage(content):
     percentage_true = 0
     percentage_false = 0
@@ -66,6 +68,31 @@ def find_percentage(content):
                     percentage_true = 0
                     percentage_false = 0
 
-        return percentage_true, percentage_false
+    # fi content is a dictionary (for yaml file)
+    elif isinstance(content, dict):
+        boolean_field_cpt = {}
+
+        # counting ture / false for each field
+        for key, value in boolean_field_cpt.items():
+            if isinstance(value, bool):
+                boolean_field_cpt[key] = {'True' : 0, 'False' : 0}
+
+                if value:
+                    boolean_field_cpt[key]['True'] += 1
+                else:
+                    boolean_field_cpt[key]['False'] += 1
+
+        for fields, counts in boolean_field_cpt.items():
+            total_count = counts['True'] + counts['False']
+            if total_count != 0:
+                # print("hi")
+                percentage_true = (counts['True'] / total_count) * 100
+                percentage_false = (counts['False'] / total_count) * 100
+                break
+            else:
+                percentage_true = 0
+                percentage_false = 0
+
+    return percentage_true, percentage_false
 
 
