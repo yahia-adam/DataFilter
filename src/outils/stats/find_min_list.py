@@ -65,5 +65,5 @@ def find_min_list(content):
             raise ValueError("No values found in the file")
     else:
         raise ValueError("File not supported")
-    
+
     return field_name, min_values
