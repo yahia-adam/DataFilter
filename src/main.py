@@ -14,13 +14,13 @@ from outils.stats import find_min
 
 if __name__ == "__main__":
     datas = upload_file.upload_file("C:\\Users\\csalhab\\OneDrive\\Online Sessions\\3iabd1\\Scripting "
-             "Python\\DataFilter\\datas\\inputs\\csv\\students.csv")
+             "Python\\DataFilter\\datas\\inputs\\xml\\students.xml")
     if not datas:
         exit()
     else:
 
         # print(datas)
-        x, y = find_min_list.find_min_list(datas)
+        x, y = find_average_list.find_average_list(datas)
         print(x, y)
         # print(datas)
         # a, x, y = find_percentage.find_percentage(datas)
