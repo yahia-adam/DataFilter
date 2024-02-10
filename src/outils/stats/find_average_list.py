@@ -54,7 +54,7 @@ def find_average_list(content):
         else:
             raise ValueError("No values found in the file")
     else:
-       raise ValueError("File not supported")
+        raise ValueError("File not supported")
 
     average_values = [round(nb, 2) for nb in average_values]
     return field_name, average_values
