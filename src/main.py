@@ -4,19 +4,20 @@ DataFilter Project
 Fevrier 2024
 """
 
-from src.outils.upload import upload_file
-from src.outils.stats import find_average
+from outils.upload import upload_file
+from outils.stats import find_average
+from outils.stats import find_percentage
 
 if __name__ == "__main__":
     datas = upload_file.upload_file("C:\\Users\\csalhab\\OneDrive\\Online Sessions\\3iabd1\\Scripting "
-             "Python\\DataFilter\\datas\\inputs\\yaml\\students.yaml")
+             "Python\\DataFilter\\datas\\inputs\\json\\students.json")
     if not datas:
         exit()
     else:
 
         # print(datas)
-        x = find_average.find_average(datas)
-        print(x)
+        x, y = find_percentage.find_percentage(datas)
+        print(x, y)
 
         # pour acceder au valeur du json
         # print(datas['students'][0]['firstname'])
