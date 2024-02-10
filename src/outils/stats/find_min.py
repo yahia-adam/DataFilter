@@ -62,12 +62,9 @@ def find_min(content):
     # if content is ET.element (for xml files only)
     elif isinstance(content, ET.Element):
         num_values = []
-        for child in content.iter():
-            if child.text.replace('.', '', 1).isdigit():
-                if '.' in child.text:
-                    num_values.append(float(child.text))
-                else:
-                    num_values.append(int(child.text))
+        for child in content:
+            if len(child) == 0:
+                print(child)
         if num_values:
             return min(num_values)
         else:
