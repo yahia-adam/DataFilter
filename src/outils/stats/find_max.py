@@ -60,5 +60,17 @@ def find_max(content):
                 else:
                     raise ValueError("No values found in the file")
     # if content is ET.element (for xml files only)
-    # elif isinstance(content, ET.Element):
-        
+    elif isinstance(content, ET.Element):
+        num_values = []
+        for child in content.iter():
+            try:
+                value = int(child.text)
+                num_values.append(value)
+            except ValueError:
+                pass
+
+        if num_values:
+            max_value = max(num_values)
+            return max_value
+        else:
+            raise ValueError("No values found in the file")

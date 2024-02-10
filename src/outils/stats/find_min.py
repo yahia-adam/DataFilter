@@ -62,10 +62,15 @@ def find_min(content):
     # if content is ET.element (for xml files only)
     elif isinstance(content, ET.Element):
         num_values = []
-        for child in content:
-            if len(child) == 0:
-                print(child)
+        for child in content.iter():
+            try:
+                value = int(child.text)
+                num_values.append(value)
+            except ValueError:
+                pass
+
         if num_values:
-            return min(num_values)
+            min_value = min(num_values)
+            return min_value
         else:
             raise ValueError("No values found in the file")

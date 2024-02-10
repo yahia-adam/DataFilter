@@ -58,3 +58,18 @@ def find_average(content):
                     return field_name, sum(num_values) / len(num_values)
                 else:
                     raise ValueError("No values found in the file")
+
+    # if content is ET.element (for xml files only)
+    elif isinstance(content, ET.Element):
+        num_values = []
+        for child in content.iter():
+            try:
+                value = int(child.text)
+                num_values.append(value)
+            except ValueError:
+                pass
+
+        if num_values:
+            return sum(num_values) / len(num_values)
+        else:
+            raise ValueError("No values found in the file")
