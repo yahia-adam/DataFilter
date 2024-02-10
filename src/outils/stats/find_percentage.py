@@ -93,6 +93,6 @@ def find_percentage(content):
                 percentage_true = 0
                 percentage_false = 0
 
-    return percentage_true, percentage_false
+    return fields, percentage_true, percentage_false
 
 

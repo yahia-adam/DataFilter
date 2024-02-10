@@ -14,10 +14,11 @@ if __name__ == "__main__":
     if not datas:
         exit()
     else:
-
-        # print(datas)
-        x, y = find_percentage.find_percentage(datas)
+        x, y = find_average.find_average(datas)
         print(x, y)
+        # print(datas)
+        # a, x, y = find_percentage.find_percentage(datas)
+        # print(a, x, "True", y, "False")
 
         # pour acceder au valeur du json
         # print(datas['students'][0]['firstname'])
