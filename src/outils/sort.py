@@ -14,7 +14,7 @@ def clean(data):
             map(clean, data[i])
     return data
 
-
+#TO DO : check with itemgetter() for sort on multiple keys
 def sort(data, field, data_type, reversed = False):
     if data_type == "csv":
         try:
@@ -23,3 +23,9 @@ def sort(data, field, data_type, reversed = False):
             return sorted(data[1:], key = lambda x: x[index], reverse=reversed)
         except ValueError:
             print(f"Field {field} not found")
+    elif data_type == "json":
+        if field in data[0].keys():
+            return sorted(data, key = lambda x : x.get(field), reverse=reversed)
+        else:
+            print(f"Field {field} not found")
+
