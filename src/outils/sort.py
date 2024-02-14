@@ -48,6 +48,6 @@ def unique_sort(data,  data_type, field, reversed = False, ):
 def sort(data, data_type, reversed = False, *fields):
     for f in fields[::-1]:
         print(f)
-        data = data_sort(data, data_type, f, reversed=reversed)
+        data = unique_sort(data, data_type, f, reversed=reversed)
         print(data)
     return data
