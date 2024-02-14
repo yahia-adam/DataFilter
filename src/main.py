@@ -4,12 +4,14 @@ from outils import find_min
 from outils import sort
 
 if __name__ == "__main__":
-    datas = upload_file.upload_file("C:\Code\Python\DataFilter\DataFilter\datas\inputs\json\students.json")
+    datas = upload_file.upload_file("C:\Code\Python\DataFilter\DataFilter\datas\inputs\\csv\students.csv")
     if not datas:
         exit()
     else:
+        datas = sort.clean(datas)
         print(datas)
-        print(sort.sort(datas, "lastname", "json"))
+        
+        datas = sort.sort(datas, "csv",False, "age", "lastname")
 
         # pour acceder au valeur du json
         # print(datas['students'][0]['firstname'])
