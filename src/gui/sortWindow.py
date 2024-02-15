@@ -72,10 +72,6 @@ class App(tk.Tk):
             initialdir='/',
             filetypes=filetypes)
 
-        showinfo(
-            title='Selected File',
-            message=filename
-        )
 
     def create_tree_widget(self):
         columns = ('first_name', 'last_name', 'email')
@@ -129,3 +125,34 @@ class App(tk.Tk):
     def add_number(self):
         self.number = self.number + 1
         self.set_mystr(str(self.number))
+
+
+# from tkinter import *
+# from tkinter import ttk
+# import threading
+# import time
+
+# def fun():
+#     for i in range(10):
+#         var.set(var.get() + 1)
+#         x = tree.get_children()
+#         tree.item(x, text = 'Number', values = var.get())
+#         time.sleep(.5)
+        
+# t = threading.Thread(target=fun)
+
+# root = Tk()
+
+# var = IntVar()
+# var.set(0)
+
+# mainframe = ttk.Frame(root)
+# mainframe.grid(column = 0, row = 0)
+
+# tree = ttk.Treeview(mainframe, columns = ('number'), height = 1)
+
+# tree.insert('', 'end', text = 'Number', values = var.get())
+# tree.grid(column=0, row=0)
+
+# t.start()
+# root.mainloop()

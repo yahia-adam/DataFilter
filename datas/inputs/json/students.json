@@ -11,7 +11,7 @@
         "lastname": "Smith",
         "age": 21,
         "apprentice": false,
-        "grades": [75, 89, 93]
+        "grades": [23, 89, 93]
     },
     {
         "firstname": "Bob",
@@ -68,5 +68,216 @@
         "age": 19,
         "apprentice": false,
         "grades": [77, 91, 86]
+    },
+    {
+        "firstname": "Sophia30",
+        "lastname": "Clark",
+        "age": 19,
+        "apprentice": false,
+        "grades": [77, 91, 86]
+    },
+    {
+        "firstname": "Sophia29",
+        "lastname": "Clark",
+        "age": 19,
+        "apprentice": false,
+        "grades": [77, 91, 86]
+    },
+    {
+        "firstname": "Sophia28",
+        "lastname": "Clark",
+        "age": 19,
+        "apprentice": false,
+        "grades": [77, 91, 86]
+    },
+    {
+        "firstname": "Sophia27",
+        "lastname": "Clark",
+        "age": 19,
+        "apprentice": false,
+        "grades": [77, 91, 86]
+    },
+    {
+        "firstname": "Sophia26",
+        "lastname": "Clark",
+        "age": 19,
+        "apprentice": false,
+        "grades": [77, 91, 86]
+    },
+    {
+        "firstname": "Sophia25",
+        "lastname": "Clark",
+        "age": 19,
+        "apprentice": false,
+        "grades": [77, 91, 86]
+    },
+    {
+        "firstname": "Sophia24",
+        "lastname": "Clark",
+        "age": 19,
+        "apprentice": false,
+        "grades": [77, 91, 86]
+    },
+    {
+        "firstname": "Sophia23",
+        "lastname": "Clark",
+        "age": 19,
+        "apprentice": false,
+        "grades": [77, 91, 86]
+    },
+    {
+        "firstname": "Sophia22",
+        "lastname": "Clark",
+        "age": 19,
+        "apprentice": false,
+        "grades": [77, 91, 86]
+    },
+    {
+        "firstname": "Sophia21",
+        "lastname": "Clark",
+        "age": 19,
+        "apprentice": false,
+        "grades": [77, 91, 86]
+    },
+    {
+        "firstname": "Sophia20",
+        "lastname": "Clark",
+        "age": 19,
+        "apprentice": false,
+        "grades": [77, 91, 86]
+    },
+    {
+        "firstname": "Sophia19",
+        "lastname": "Clark",
+        "age": 19,
+        "apprentice": false,
+        "grades": [77, 91, 86]
+    },
+    {
+        "firstname": "Sophia18",
+        "lastname": "Clark",
+        "age": 19,
+        "apprentice": false,
+        "grades": [77, 91, 86]
+    },
+    {
+        "firstname": "Sophia17",
+        "lastname": "Clark",
+        "age": 19,
+        "apprentice": false,
+        "grades": [77, 91, 86]
+    },
+    {
+        "firstname": "Sophia16",
+        "lastname": "Clark",
+        "age": 19,
+        "apprentice": false,
+        "grades": [77, 91, 86]
+    },
+    {
+        "firstname": "Sophia15",
+        "lastname": "Clark",
+        "age": 19,
+        "apprentice": false,
+        "grades": [77, 91, 86]
+    },
+    {
+        "firstname": "Sophia14",
+        "lastname": "Clark",
+        "age": 19,
+        "apprentice": false,
+        "grades": [77, 91, 86]
+    },
+    {
+        "firstname": "Sophia13",
+        "lastname": "Clark",
+        "age": 19,
+        "apprentice": false,
+        "grades": [77, 91, 86]
+    },
+    {
+        "firstname": "Sophia12",
+        "lastname": "Clark",
+        "age": 19,
+        "apprentice": false,
+        "grades": [77, 91, 86]
+    },
+    {
+        "firstname": "Sophia11",
+        "lastname": "Clark",
+        "age": 19,
+        "apprentice": false,
+        "grades": [77, 91, 86]
+    },
+    {
+        "firstname": "Sophia10",
+        "lastname": "Clark",
+        "age": 19,
+        "apprentice": false,
+        "grades": [77, 91, 86]
+    },
+    {
+        "firstname": "Sophia9",
+        "lastname": "Clark",
+        "age": 19,
+        "apprentice": false,
+        "grades": [77, 91, 86]
+    },
+    {
+        "firstname": "Sophia8",
+        "lastname": "Clark",
+        "age": 19,
+        "apprentice": false,
+        "grades": [77, 91, 86]
+    },
+    {
+        "firstname": "Sophia7",
+        "lastname": "Clark",
+        "age": 19,
+        "apprentice": false,
+        "grades": [77, 91, 86]
+    },
+    {
+        "firstname": "Sophia6",
+        "lastname": "Clark",
+        "age": 19,
+        "apprentice": false,
+        "grades": [77, 91, 86]
+    },
+    {
+        "firstname": "Sophia5",
+        "lastname": "Clark",
+        "age": 19,
+        "apprentice": false,
+        "grades": [77, 91, 86]
+    },
+    {
+        "firstname": "Sophia4",
+        "lastname": "Clark",
+        "age": 19,
+        "apprentice": false,
+        "grades": [77, 91, 86]
+    },
+    {
+        "firstname": "Sophia3",
+        "lastname": "Clark",
+        "age": 19,
+        "apprentice": false,
+        "grades": [77, 91, 86]
+    },
+    {
+        "firstname": "Sophia2",
+        "lastname": "Clark",
+        "age": 19,
+        "apprentice": false,
+        "grades": [77, 91, 86]
+    },
+    {
+        "firstname": "Sophia1",
+        "lastname": "Clark",
+        "age": 19,
+        "apprentice": false,
+        "grades": [77, 91, 86]
     }
+
 ]
