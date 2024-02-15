@@ -1,5 +1,5 @@
 firstname,lastname,age,apprentice,grades
-John,Doe,22,true,"85,92,78"
+John,Doe,22,true,"85,32,78"
 Jane,Smith,21,false,"75,89,93"
 Bob,Johnson,20,true,"88,76,80"
 Emily,Brown,23,false,"95,87,91"

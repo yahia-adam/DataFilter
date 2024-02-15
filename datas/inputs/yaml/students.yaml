@@ -1,61 +1,81 @@
 students:
-  - 
-    firstname: John
+  - firstname: John
     lastname: Doe
     age: 22
     apprentice: true
-    grades: [85, 92, 78]
-  - 
-    firstname: Jane
+    grades:
+      - 85
+      - 92
+      - 78
+  - firstname: Jane
     lastname: Smith
     age: 21
     apprentice: false
-    grades: [75, 89, 93]
-  - 
-    firstname: Bob
+    grades:
+      - 75
+      - 15
+      - 93
+  - firstname: Bob
     lastname: Johnson
     age: 20
     apprentice: true
-    grades: [88, 76, 80]
-  - 
-    firstname: Emily
+    grades:
+      - 88
+      - 76
+      - 80
+  - firstname: Emily
     lastname: Brown
     age: 23
     apprentice: false
-    grades: [95, 87, 91]
-  - 
-    firstname: Michael
+    grades:
+      - 95
+      - 87
+      - 91
+  - firstname: Michael
     lastname: Davis
     age: 19
     apprentice: true
-    grades: [79, 84, 88]
-  - 
-    firstname: Sarah
+    grades:
+      - 79
+      - 84
+      - 88
+  - firstname: Sarah
     lastname: Wilson
     age: 22
     apprentice: false
-    grades: [92, 85, 78]
-  - 
-    firstname: James
+    grades:
+      - 92
+      - 85
+      - 78
+  - firstname: James
     lastname: Miller
     age: 20
     apprentice: true
-    grades: [76, 83, 89]
-  - 
-    firstname: Olivia
+    grades:
+      - 76
+      - 83
+      - 89
+  - firstname: Olivia
     lastname: Taylor
     age: 21
     apprentice: false
-    grades: [88, 90, 94]
-  - 
-    firstname: David
+    grades:
+      - 88
+      - 90
+      - 94
+  - firstname: David
     lastname: Anderson
     age: 24
     apprentice: true
-    grades: [85, 78, 82]
-  - 
-    firstname: Sophia
+    grades:
+      - 85
+      - 78
+      - 82
+  - firstname: Sophia
     lastname: Clark
     age: 19
     apprentice: false
-    grades: [77, 91, 86]
+    grades:
+      - 77
+      - 91
+      - 86

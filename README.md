@@ -55,6 +55,9 @@ python3 src/main.py
 ```
 ## Contributors ✨
 
+
+[<img src="https://github.com/c-salhab.png" width="60px;"/><br/><sub><a href="https://github.com/c-salhab">Charbel</a></sub>](https://github.com/c-salhab/DataFilter) 
+
 [<img src="https://github.com/yahia-adam.png" width="60px;"/><br/><sub><a href="https://github.com/yahia-adam">Adam</a></sub>](https://github.com/yahia-adam/DataFilter) 
 
-[<img src="https://github.com/Zameloth.png" width="60px;"/><br/><sub><a href="https://github.com/yahia-adam">Théo</a></sub>](https://github.com/Zameloth/DataFilter)
+[<img src="https://github.com/Zameloth.png" width="60px;"/><br/><sub><a href="https://github.com/Zameloth">Théo</a></sub>](https://github.com/Zameloth/DataFilter)
