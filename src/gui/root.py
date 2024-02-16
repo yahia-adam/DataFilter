@@ -3,6 +3,8 @@ from tkinter import ttk
 from fileData.filedata import FileData
 from tkinter.messagebox import showinfo
 from upload.upload_file import upload_file
+from gui.filterWindow import FilterWindow
+from gui.sortWindow import SortWindow
 
 class App(tk.Tk):
     def __init__(self):
@@ -19,18 +21,18 @@ class App(tk.Tk):
 
         # Frame pour les boutons
         btn_frame = tk.Frame(self)
-        sort_btn = tk.Button(btn_frame, text="Sort")
-        filter_btn = tk.Button(btn_frame, text="Filter")
+        sort_btn = tk.Button(btn_frame, text="Sort", command=self.open_sort_window)
+        filter_btn = tk.Button(btn_frame, text="Filter", command=self.open_filter_window)
         sort_btn.pack(side=tk.LEFT)
         filter_btn.pack(side=tk.RIGHT)
         btn_frame.grid(column=0, row=0)
-
+        
         # Frame pour le tableau
         tab_frame = tk.Frame(self)
         columns = tuple(self.filtered_datas.get_columns_name())
         self.tree = ttk.Treeview(tab_frame, height=30, columns=columns, show='headings')
         for c in columns:
-            self.tree.heading(c, text=c)
+            self.tree.heading(c, text= f'{c}')
         for data in self.filtered_datas.datas:
             data = (tuple(str(value) for value in data.values()))
             self.tree.insert('', tk.END, values=data)
@@ -42,7 +44,15 @@ class App(tk.Tk):
         tab_frame.grid(column=0, row=1)
 
     def item_selected(self, event):
-        for selected_item in self.tree.selection():
-            item = self.tree.item(selected_item)
-            record = item['values']
-            showinfo(title='Information', message=','.join(record))
+        pass
+        # for selected_item in self.tree.selection():
+        #     item = self.tree.item(selected_item)
+        #     record = str(item['values'])
+        #     showinfo(title='Information', message=','.join(record))
+    
+    def open_filter_window(self):
+        fw = FilterWindow(self)
+        fw.grab_set()
+    def open_sort_window(self):
+        sw = SortWindow(self)
+        sw.grab_set()
