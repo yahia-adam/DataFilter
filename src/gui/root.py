@@ -12,47 +12,49 @@ class App(tk.Tk):
 
         # Configuration de la fenêtre principale
         self.title('-- Data Filter --')
+        # self.resizable(False,False)
         self.grid()
-        self.resizable(False,False)
+
         # Variables
-        self.datas = FileData([])
-        self.filtered_datas = FileData(upload_file("/home/adam/Documents/esgi/DataFilter/datas/inputs/json/students.json"))
-        self.file_name = ""
+        self.initial_datas = []
+        self.filtred_datas = []
 
         # Frame pour les boutons
-        btn_frame = tk.Frame(self)
-        sort_btn = tk.Button(btn_frame, text="Sort", command=self.open_sort_window)
-        filter_btn = tk.Button(btn_frame, text="Filter", command=self.open_filter_window)
-        sort_btn.pack(side=tk.LEFT)
-        filter_btn.pack(side=tk.RIGHT)
-        btn_frame.grid(column=0, row=0)
+        self.btn_frame = tk.Frame(self)
         
-        # Frame pour le tableau
-        tab_frame = tk.Frame(self)
-        columns = tuple(self.filtered_datas.get_columns_name())
-        self.tree = ttk.Treeview(tab_frame, height=30, columns=columns, show='headings')
-        for c in columns:
-            self.tree.heading(c, text= f'{c}')
-        for data in self.filtered_datas.datas:
-            data = (tuple(str(value) for value in data.values()))
-            self.tree.insert('', tk.END, values=data)
-        self.tree.bind('<<TreeviewSelect>>', self.item_selected)
-        self.tree.grid(row=0, column=0, sticky='nsew')
-        scrollbar = ttk.Scrollbar(tab_frame, orient=tk.VERTICAL, command=self.tree.yview)
-        self.tree.configure(yscroll=scrollbar.set)
-        scrollbar.grid(row=0, column=1, sticky='ns')
-        tab_frame.grid(column=0, row=1)
+        self.sort_btn = tk.Button(self.btn_frame, text="Sort", command=self.open_sort_window)
+        self.filter_btn = tk.Button(self.btn_frame, text="Filter", command=self.open_filter_window)
+        
+        self.sort_btn.pack(side=tk.LEFT)
+        self.filter_btn.pack(side=tk.RIGHT)
+        
+        self.btn_frame.grid(column=0, row=0)
 
-    def item_selected(self, event):
-        pass
-        # for selected_item in self.tree.selection():
-        #     item = self.tree.item(selected_item)
-        #     record = str(item['values'])
-        #     showinfo(title='Information', message=','.join(record))
-    
+        # Tree view
+        self.tree_widget = None
+        self.tree_frame = tk.Frame(self)
+        self.tree_frame.grid(column=0, row=1)
+
+    def create_tree_widget(self, datas):
+        if (self.tree_widget != None):
+            self.clear_tree_frame()
+        columns = list(datas[0].keys())
+        self.tree_widget = ttk.Treeview(self.tree_frame, columns=columns, show="headings")
+        for col in columns:
+            self.tree_widget.heading(col, text=col)
+            self.tree_widget.column(col, anchor="center")
+        for item in datas:
+            values = [str(item[col]) for col in columns]
+            self.tree_widget.insert('', 'end', values=values)
+        self.tree_widget.pack(expand=True, fill=tk.BOTH, side=tk.TOP)
+
     def open_filter_window(self):
         fw = FilterWindow(self)
         fw.grab_set()
     def open_sort_window(self):
         sw = SortWindow(self)
         sw.grab_set()
+
+    def clear_tree_frame(self):
+        for widget in self.tree_frame.winfo_children():
+            widget.destroy()
