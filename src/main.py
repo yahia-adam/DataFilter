@@ -4,7 +4,6 @@ DataFilter Project
 Fevrier 2024
 """
 
-# gui/interface
 from gui.root import App
 from gui.menu import AppMenu
 from upload import upload_file
