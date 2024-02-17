@@ -1,6 +1,5 @@
 import tkinter as tk
 from tkinter import ttk
-from fileData.filedata import FileData
 from tkinter.messagebox import showinfo
 from upload.upload_file import upload_file
 from gui.filterWindow import FilterWindow

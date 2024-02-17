@@ -1,9 +1,9 @@
 from tkinter import Menu, filedialog as fd
 from upload.upload_file import upload_file
 from gui.root import App
-from fileData.filedata import FileData
 import tkinter as tk
 from tkinter import *
+from save import save_file
 
 class AppMenu(Menu):
     def __init__(self, app: App):
@@ -15,8 +15,8 @@ class AppMenu(Menu):
             label='Open',
             command=lambda: self.select_file(app)
         )
-        self.file_menu.add_command(label='Save')
-        self.file_menu.add_command(label='Save as', command=self.file_as_save)
+        self.file_menu.add_command(label='Save', command=lambda: self.save_file(app))
+        self.file_menu.add_command(label='Save as', command=lambda: self.save_sa_file(app))
         self.file_menu.add_command(label='Close')
         self.file_menu.add_separator()
         self.file_menu.add_command(
@@ -25,27 +25,30 @@ class AppMenu(Menu):
         )
     
     def select_file(self, app):
-        filetypes = (
-                ('CSV files', '*.csv'),
-                ('JSON files', '*.json'),
-                ('All files', '*.*')
-            )
+        allowed_filetypes = [('JSON files', '*.json'),('CSV files', '*.csv'),('YAML files', '*.yaml')]
 
         filename = fd.askopenfilename(
             title='Open a file',
             initialdir='./datas',
-            filetypes=filetypes
+            filetypes=allowed_filetypes
         )
-        datas = upload_file(filename)
-        app.file_name = filename
-        app.initial_datas = datas
-        app.filtred_datas = datas
-        app.create_tree_widget(datas)
+        if filename:
+            datas = upload_file(filename)
+            app.file_name = filename
+            app.initial_datas = datas
+            app.filtred_datas = datas
+            app.create_tree_widget(datas)
 
-    def file_as_save(self):
+    def save_sa_file(self, app):
+        allowed_filetypes = [('JSON files', '*.json'),('CSV files', '*.csv'),('YAML files', '*.yaml')]
         f = fd.asksaveasfile(mode='w',
             initialdir="./datas/outputs",
-            defaultextension=".json")
-        
+            defaultextension=".json",
+            filetypes=allowed_filetypes,
+        )
+        save_file.save_sa_file(filepath=f.name, datas=app.filtred_datas)
         f.close()
-        print(f.name())
+
+    def save_file(self, app):
+        if (app.file_name and app.filtred_datas):
+            save_file.save_sa_file(filepath=app.file_name, datas=app.filtred_datas)

@@ -3,44 +3,75 @@ Authors : Charbel Salhab, Theo Eloy, Adam Yahia Abdchafee
 DataFilter Project
 Fevrier 2024
 """
-
-import csv, json, yaml
+import json
+import csv
+import yaml
 import xml.etree.ElementTree as ET
 
+def open_json(filepath):
+    try:
+        with open(filepath, 'r') as file:
+            data = json.load(file)
+        return data
+    except Exception as e:
+        print(f"Error opening JSON file: {e}")
+        return None
 
-# upload_file function used to upload csv, json, xml and yaml files and returns its content
-def upload_file(file):
-    # returns a list of lists representing each line of the csv file
-    if file.endswith('.csv'):
-        file_content = []
-        with open(file, 'r') as f:
-            reader = csv.reader(f)
-            for line in reader:
-                file_content.append(line)
-        # print(file_content) test done in main.py
-        return file_content
+def open_csv(filepath):
+    try:
+        with open(filepath, 'r', newline='') as file:
+            csv_reader = csv.DictReader(file)
+            data = [row for row in csv_reader]
+        return data
+    except Exception as e:
+        print(f"Error opening CSV file: {e}")
+        return None
 
-    # returns a dictionary containing all the json content
-    elif file.endswith('.json'):
-        with open(file, 'r') as f:
-            file_content = json.load(f)
-        return file_content
+def open_yaml(filepath):
+    try:
+        with open(filepath, 'r') as file:
+            data = yaml.safe_load(file)
+        return data
+    except Exception as e:
+        print(f"Error opening YAML file: {e}")
+        return None
 
-    # returns a dictionary containing all the yaml content
-    elif file.endswith('.yaml'):
-        with open(file, 'r') as f:
-            # parse the yaml file and produce the corresponding python object
-            # in this case a dictionary
-            file_content = yaml.safe_load(f)
-        return file_content
+def open_xml(filepath):
+    try:
+        tree = ET.parse(filepath)
+        root = tree.getroot()
+        data = []
+        for item in root.findall('item'):
+            item_data = {child.tag: child.text for child in item}
+            data.append(item_data)
+        return data
+    except Exception as e:
+        print(f"Error opening XML file: {e}")
+        return None
 
-    # A checker :
-    # https://docs.python.org/3/library/xml.etree.elementtree.html
-    elif file.endswith('.xml'):
-        t = ET.parse(file)
-        r = t.getroot()
-        return r
+def upload_file(filepath):
+    allowed_file_types = ['json', 'csv', 'xml', 'yaml']
+    filetype = filepath.split(".")[-1].lower()
+    if filetype not in allowed_file_types:
+        raise Exception(f'Only {", ".join(allowed_file_types)} files are accepted.')
 
-    # raise value error if file format is not supported
+    if filetype == "json":
+        datas = open_json(filepath)
+        return datas
+    elif filetype == "csv":
+        datas = open_csv(filepath)
+        return datas
+    elif filetype == "yaml":
+        datas = open_yaml(filepath)
+        return datas
     else:
-        raise ValueError("File Format Not Supported".format(file))
+        datas = open_xml(filepath)
+        return datas
+    return None
+
+filepathjson='/home/adam/Documents/esgi/DataFilter/datas/inputs/json/students.json'
+filepathcsv='/home/adam/Documents/esgi/DataFilter/datas/inputs/csv/students.csv'
+filepathyaml='/home/adam/Documents/esgi/DataFilter/datas/inputs/yaml/students.yaml'
+filepathxml='/home/adam/Documents/esgi/DataFilter/datas/inputs/xml/students.xml'
+
+# print(upload_file(filepathxml))

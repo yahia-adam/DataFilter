@@ -1,62 +1,60 @@
-<items>
-    <item>
-        <name>Livre</name>
-        <category>Littérature</category>
-        <price>15.99</price>
-        <quantity>50</quantity>
-    </item>
-    <item>
-        <name>Ordinateur portable</name>
-        <category>Électronique</category>
-        <price>799.99</price>
-        <quantity>10</quantity>
-    </item>
-    <item>
-        <name>Téléphone mobile</name>
-        <category>Électronique</category>
-        <price>499.99</price>
-        <quantity>20</quantity>
-    </item>
-    <item>
-        <name>Chaussures de sport</name>
-        <category>Vêtements</category>
-        <price>69.99</price>
-        <quantity>30</quantity>
-    </item>
-    <item>
-        <name>Cahier</name>
-        <category>Fournitures scolaires</category>
-        <price>2.99</price>
-        <quantity>100</quantity>
-    </item>
-    <item>
-        <name>Montre</name>
-        <category>Accessoires</category>
-        <price>49.99</price>
-        <quantity>15</quantity>
-    </item>
-    <item>
-        <name>Enceinte Bluetooth</name>
-        <category>Électronique</category>
-        <price>39.99</price>
-        <quantity>25</quantity>
-    </item>
-    <item>
-        <name>T-shirt</name>
-        <category>Vêtements</category>
-        <price>19.99</price>
-        <quantity>40</quantity>
-    </item>
-    <item>
-        <name>Sac à dos</name>
-        <category>Accessoires</category>
-        <price>29.99</price>
-        <quantity>10</quantity>
-    </item>
-    <item>
-        <name>Stylo</name>
-        <category>Fournitures scolaires</category>
-        <price>1.49</price>
-        <quantity>200</quantity>
-    </item>
-</items>
+<item>
+    <name>Livre</name>
+    <category>Littérature</category>
+    <price>15.99</price>
+    <quantity>50</quantity>
+</item>
+<item>
+    <name>Ordinateur portable</name>
+    <category>Électronique</category>
+    <price>799.99</price>
+    <quantity>10</quantity>
+</item>
+<item>
+    <name>Téléphone mobile</name>
+    <category>Électronique</category>
+    <price>499.99</price>
+    <quantity>20</quantity>
+</item>
+<item>
+    <name>Chaussures de sport</name>
+    <category>Vêtements</category>
+    <price>69.99</price>
+    <quantity>30</quantity>
+</item>
+<item>
+    <name>Cahier</name>
+    <category>Fournitures scolaires</category>
+    <price>2.99</price>
+    <quantity>100</quantity>
+</item>
+<item>
+    <name>Montre</name>
+    <category>Accessoires</category>
+    <price>49.99</price>
+    <quantity>15</quantity>
+</item>
+<item>
+    <name>Enceinte Bluetooth</name>
+    <category>Électronique</category>
+    <price>39.99</price>
+    <quantity>25</quantity>
+</item>
+<item>
+    <name>T-shirt</name>
+    <category>Vêtements</category>
+    <price>19.99</price>
+    <quantity>40</quantity>
+</item>
+<item>
+    <name>Sac à dos</name>
+    <category>Accessoires</category>
+    <price>29.99</price>
+    <quantity>10</quantity>
+</item>
+<item>
+    <name>Stylo</name>
+    <category>Fournitures scolaires</category>
+    <price>1.49</price>
+    <quantity>200</quantity>
+</item>
