@@ -11,6 +11,7 @@ class App(tk.Tk):
 
         # Configuration de la fenêtre principale
         self.title('-- Data Filter --')
+        self.geometry(f'{500}x{500}')
         # self.resizable(False,False)
         self.grid()
 
@@ -42,10 +43,11 @@ class App(tk.Tk):
         for col in columns:
             self.tree_widget.heading(col, text=col)
             self.tree_widget.column(col, anchor="center")
+
         for item in datas:
             values = [str(item[col]) for col in columns]
             self.tree_widget.insert('', 'end', values=values)
-        self.tree_widget.pack(expand=True, fill=tk.BOTH, side=tk.TOP)
+        self.tree_widget.pack(expand=True, fill=tk.BOTH)
 
     def open_filter_window(self):
         fw = FilterWindow(self)
