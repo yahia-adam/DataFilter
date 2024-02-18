@@ -37,11 +37,11 @@ class SortWindow(tk.Toplevel):
             if type(value) == int:
                 value_options = ['Ascending', 'Descending']                
             elif type(value) == str:
-                value_options = ['ascending alphabetical order', 'descending alphabetical order']                
+                value_options = ['Ascending alphabetical order', 'Descending alphabetical order']                
             elif type(value) == list:
-                value_options = ['ascending by length', 'descending by length']                
+                value_options = ['Ascending by length', 'Descending by length']                
             elif type(value) == bool:
-                value_options = ['ascending with True first', 'descending with False first']                
+                value_options = ['Ascending with False first', 'Descending with True first']                
             else:
                 continue
 
@@ -50,8 +50,6 @@ class SortWindow(tk.Toplevel):
             f = {'col_name': key, 'sort': tk.StringVar(), 'value': tk.StringVar(), 'type': int}
             name_label = ttk.Label(frame, text=f['col_name'] + ' : ', width=max_label_width)
             name_label.pack(side=tk.LEFT, padx=5)
-            sort = tk.Checkbutton(frame, textvariable=f['sort'], onvalue="True", offvalue="False", width=(5))
-            sort.pack(side=tk.LEFT, padx=5)
             value = ttk.Combobox(frame, values=value_options, textvariable=f['value'], state="readonly", width=(30))
             value.pack(side=tk.LEFT, padx=5)
             sorts.append(f)
@@ -70,10 +68,16 @@ class SortWindow(tk.Toplevel):
         
     def on_submit(self, app):
         for s in self.sorts:
-            if (s['sort'].get() == "True"):
-                value  = s['value'].get()
-                app.filtred_datas = sort.sort(app.filtred_datas, 'json', )
-        # app.create_tree_widget(app.filtred_datas)
+            col_name = s['col_name']
+            value = s['value'].get()
+            value = value.split()
+            if (len(value) > 0):
+                if (value[0] == "Ascending"):
+                    value = False
+                else:
+                    value = True
+                app.filtred_datas = sort.sort(app.filtred_datas, 'json', value, col_name)
+                app.create_tree_widget(app.filtred_datas)
         self.destroy()
     def clear_sort(self, app):
         app.filtred_datas = app.initial_datas
