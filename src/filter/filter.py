@@ -18,12 +18,28 @@ def equals (data, format, field, *value):
             print(f"Field {field} not found")
             return data
 
-def contains (data, format, field, *value):
+def contains (data, format, field, value):
     try:
-        data = [d for d in data if any([v == datalist for v in value for datalist in d[field]])]
+        data = [line for line in data if value in line[field]]
         return data
     except TypeError:
         print(f"Field {field} is not a string or iterable") 
+        return data
+    except KeyError:
+        print(f"Field {field} not found")
+        return data
+    
+def lower_than(data, field, max):
+    try:
+        data = [line for line in data if line[field] <= max]
+        return data
+    except KeyError:
+        print(f"Field {field} not found")
+        return data
+    
+def higher_than(data, field, min):
+    try:
+        data = [line for line in data if line[field] >= min]
         return data
     except KeyError:
         print(f"Field {field} not found")
