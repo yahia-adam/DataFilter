@@ -37,7 +37,7 @@ class FilterWindow(tk.Toplevel):
         filters = []
         max_label_width = max(len(key) for key in app.filtred_datas[0].keys())
         for key, value in app.filtred_datas[0].items():
-            if type(value) == int:
+            if type(value) == int or type(value) == float:
                 frame = ttk.Frame(self.filter_frame, padding=(5, 5, 5, 5), borderwidth=1, relief="solid")
                 frame.pack(side=tk.TOP, pady=5)
                 f = {'col_name': key, 'min': tk.StringVar(), 'max': tk.StringVar(), 'type': int}
