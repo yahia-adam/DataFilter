@@ -114,10 +114,14 @@ class FilterWindow(tk.Toplevel):
         
     def on_submit(self, app):
         for f in self.filters:
-            # if f['type'] == int:
-            #     print(f['col_name'])
-            #     print(f['min'].get())
-            #     print(f['max'].get())
+            if f['type'] == int:
+                col_name = f['col_name']
+                col_min = f['min'].get()
+                col_max = f['max'].get()
+                if col_max != "Max":
+                    app.filtred_datas = filter.lower_than(app.filtred_datas, col_name, int(col_max))
+                if col_min !="Min":
+                    app.filtred_datas = filter.higher_than(app.filtred_datas, col_name, int(col_min))    
             if f['type'] == str:
                 col_name = f['col_name']
                 col_equal = f['equal'].get() 
@@ -140,7 +144,6 @@ class FilterWindow(tk.Toplevel):
             #         app.filtred_datas = filter.equals(app.filtred_datas, 'json', col_name, True)
             #     if col_equal == "False":
             #         app.filtred_datas = filter.equals(app.filtred_datas, 'json', col_name, False)
-            
             app.create_tree_widget(app.filtred_datas)
         self.destroy()
     def clear_filter(self, app):
