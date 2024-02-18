@@ -4,6 +4,7 @@ from tkinter.messagebox import showinfo
 from upload.upload_file import upload_file
 from gui.filterWindow import FilterWindow
 from gui.sortWindow import SortWindow
+from stats.state import calculate_stats
 
 class App(tk.Tk):
     def __init__(self):
@@ -46,9 +47,11 @@ class App(tk.Tk):
             self.tree_widget.heading(col, text=col)
             self.tree_widget.column(col, anchor="center")
         
+        values = []
         for c in columns:
-            print(c)
-
+            values.append(str(calculate_stats(datas, c, type(datas[0][c]))))
+        self.tree_widget.insert('', 'end', values=values)
+    
         for item in datas:
             values = [str(item[col]) for col in columns]
             self.tree_widget.insert('', 'end', values=values)

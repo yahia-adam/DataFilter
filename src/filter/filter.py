@@ -1,19 +1,6 @@
-
-def filter_by_int(data, field, min, max):
-    pass
-
-def filter_by_bool(data, field, value):
-    pass
-
-def filter_by_str(data, field, equal, contain):
-    pass
-
-def filter_by_list(data, field, len_equal, contain):
-    pass
-
 def equals (data, format, field, *value):
     if format == "csv":
-        try:
+        try:    
             index = list(data[0]).index(field)
             data=[d for d in data if str(d[index]) in value or d[index] == field]
             return data

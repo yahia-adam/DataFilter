@@ -24,10 +24,13 @@ class FilterWindow(tk.Toplevel):
             self.filter_frame = ttk.Frame(self)
             self.create_filter(app)
             self.filter_frame.grid(column=0, row=0)
-            self.submit_frame = ttk.Frame(self)
-            self.submit_frame.grid(column=0, row=1)
-            self.submit_button = ttk.Button(self.submit_frame, text="Submit", command=lambda: self.on_submit(app))
-            self.submit_button.grid(column=0, row=0)
+            self.button_frame = ttk.Frame(self)
+            self.button_frame.grid(column=0, row=1)
+
+            self.submit_button = ttk.Button(self.button_frame, text="Submit", command=lambda: self.on_submit(app))
+            self.clear_button = ttk.Button(self.button_frame, text="Reset", command=lambda: self.clear_filter(app))
+            self.submit_button.grid(column=0, row=0, padx=5, pady=5)
+            self.clear_button.grid(column=2, row=0,padx=5, pady=5)
 
     def create_filter(self, app):
         filters = []
@@ -108,30 +111,39 @@ class FilterWindow(tk.Toplevel):
         if entry.get() == '':
             entry.insert(0, placeholder)
             entry.config(foreground='grey')
-        self.filters = filters
         
     def on_submit(self, app):
         for f in self.filters:
-            if f['type'] == int:
-                print(f['col_name'])
-                print(f['min'].get())
-                print(f['max'].get())
+            # if f['type'] == int:
+            #     print(f['col_name'])
+            #     print(f['min'].get())
+            #     print(f['max'].get())
             if f['type'] == str:
                 col_name = f['col_name']
                 col_equal = f['equal'].get() 
                 col_contain = f['contain'].get()
-                if col_contain != None:
-                    app.filtred_datas = filter.contains(app.filtred_datas, 'json', '', col_contain)
-                if col_equal != None:
+                if (col_equal != "Equal"):
                     app.filtred_datas = filter.equals(app.filtred_datas, 'json', col_name, col_equal)
+                if col_contain != "Contain":
+                    app.filtred_datas = filter.contains(app.filtred_datas, 'json', col_name, col_contain)
             if f['type'] == bool:
                 col_name = f['col_name']
-                col_equal = f['value'].get() 
-                if col_equal != None:
-                    app.filtred_datas = filter.equals(app.filtred_datas, 'json', col_name, col_equal)
-            if f['type'] == list:
-                print(f['col_name'])
-                print(f['len_equal'].get())
-                print(f['contain'].get())
+                col_equal = f['value'].get()
+                if col_equal == "True":
+                    app.filtred_datas = filter.equals(app.filtred_datas, 'json', col_name, True)
+                if col_equal == "False":
+                    app.filtred_datas = filter.equals(app.filtred_datas, 'json', col_name, False)
+            # if f['type'] == list:
+            #     col_name = f['col_name']
+            #     col_equal = f['value'].get()
+            #     if col_equal == "True":
+            #         app.filtred_datas = filter.equals(app.filtred_datas, 'json', col_name, True)
+            #     if col_equal == "False":
+            #         app.filtred_datas = filter.equals(app.filtred_datas, 'json', col_name, False)
+            
+            app.create_tree_widget(app.filtred_datas)
+        self.destroy()
+    def clear_filter(self, app):
+        app.filtred_datas = app.initial_datas
         app.create_tree_widget(app.filtred_datas)
         self.destroy()
