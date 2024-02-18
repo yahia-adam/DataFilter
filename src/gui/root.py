@@ -12,7 +12,7 @@ class App(tk.Tk):
 
         # Configuration de la fenêtre principale
         self.title('-- Data Filter --')
-        self.geometry(f'{800}x{800}')
+        self.geometry(f'{1920}x{1080}')
         # self.resizable(False,False)
         self.grid()
 
@@ -41,11 +41,14 @@ class App(tk.Tk):
     def create_tree_widget(self, datas):
         if (self.tree_widget != None):
             self.clear_tree_frame()
+        
         columns = list(datas[0].keys())
         self.tree_widget = ttk.Treeview(self.tree_frame, columns=columns, show="headings")
+        
+        
         for col in columns:
             self.tree_widget.heading(col, text=col)
-            self.tree_widget.column(col, anchor="center")
+            self.tree_widget.column(col, anchor="center", width=300)
         
         values = []
         for c in columns:
@@ -56,6 +59,7 @@ class App(tk.Tk):
             values = [str(item[col]) for col in columns]
             self.tree_widget.insert('', 'end', values=values)
         self.tree_widget.pack(expand=True, fill=tk.BOTH)
+
 
     def open_filter_window(self):
         fw = FilterWindow(self)
