@@ -6,7 +6,6 @@ Fevrier 2024
 
 import xml.etree.ElementTree as ET
 
-
 # find_min function used to find the min number of numeric fields in csv, json, xml and yaml files and returns min value
 def find_min(content):
     # if content is a list

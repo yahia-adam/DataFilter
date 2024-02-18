@@ -1,10 +1,10 @@
 import tkinter as tk
 from tkinter import ttk
-from fileData.filedata import FileData
 from tkinter.messagebox import showinfo
 from upload.upload_file import upload_file
 from gui.filterWindow import FilterWindow
 from gui.sortWindow import SortWindow
+from stats.state import calculate_stats
 
 class App(tk.Tk):
     def __init__(self):
@@ -12,13 +12,16 @@ class App(tk.Tk):
 
         # Configuration de la fenêtre principale
         self.title('-- Data Filter --')
+        self.geometry(f'{800}x{800}')
         # self.resizable(False,False)
         self.grid()
 
         # Variables
         self.initial_datas = []
         self.filtred_datas = []
-
+        self.filters = []
+        self.sorts = []
+    
         # Frame pour les boutons
         self.btn_frame = tk.Frame(self)
         
@@ -43,10 +46,16 @@ class App(tk.Tk):
         for col in columns:
             self.tree_widget.heading(col, text=col)
             self.tree_widget.column(col, anchor="center")
+        
+        values = []
+        for c in columns:
+            values.append(str(calculate_stats(datas, c, type(datas[0][c]))))
+        self.tree_widget.insert('', 'end', values=values)
+    
         for item in datas:
             values = [str(item[col]) for col in columns]
             self.tree_widget.insert('', 'end', values=values)
-        self.tree_widget.pack(expand=True, fill=tk.BOTH, side=tk.TOP)
+        self.tree_widget.pack(expand=True, fill=tk.BOTH)
 
     def open_filter_window(self):
         fw = FilterWindow(self)
