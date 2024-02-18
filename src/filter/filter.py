@@ -17,6 +17,14 @@ def equals (data, format, field, *value):
         else:
             print(f"Field {field} not found")
             return data
+        
+def len_equals(data, field, length):
+    try:
+        data = [d for d in data if len(d[field]) == length]
+        return data
+    except KeyError:
+        print(f"Field {field} not found")
+        return data
 
 def contains (data, format, field, value):
     try:

@@ -142,10 +142,12 @@ class FilterWindow(tk.Toplevel):
                 col_name = f['col_name']
                 col_equal = f['len_equal'].get() 
                 col_contain = f['contain'].get()
+                
                 if col_equal != "Length Equal":
-                    app.filtred_datas = filter.equals(app.filtred_datas, 'json', col_name, sort.convert(col_equal))
-                if col_contain == "Contain":
-                    app.filtred_datas = filter.contains(app.filtred_datas, 'json', col_name, col_contain)
+                    app.filtred_datas = filter.len_equals(app.filtred_datas, col_name, int(col_equal))
+                    
+                if col_contain != "Contain":
+                    app.filtred_datas = filter.contains(app.filtred_datas, 'json', col_name, sort.convert(col_contain))
             
             app.create_tree_widget(app.filtred_datas)
         self.destroy()
