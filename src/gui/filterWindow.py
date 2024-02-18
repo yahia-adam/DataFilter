@@ -2,6 +2,7 @@ from functools import partial
 from tkinter import ttk
 import tkinter as tk
 from filter import filter
+from sort import sort
 
 class FilterWindow(tk.Toplevel):
     def __init__(self, app):
@@ -115,13 +116,13 @@ class FilterWindow(tk.Toplevel):
     def on_submit(self, app):
         for f in self.filters:
             if f['type'] == int:
-                 col_name = f['col_name']
-                 col_min = f['min'].get()
-                 col_max = f['max'].get()
-                 if col_max != "Max":
-                     app.filtred_datas = filter.lower_than(app.filtred_datas, col_name, int(col_max))
-                 if col_min !="Min":
-                     app.filtred_datas = filter.higher_than(app.filtred_datas, col_name, int(col_min))    
+                col_name = f['col_name']
+                col_min = f['min'].get()
+                col_max = f['max'].get()
+                if col_max != "Max":
+                    app.filtred_datas = filter.lower_than(app.filtred_datas, col_name, int(col_max))
+                if col_min !="Min":
+                    app.filtred_datas = filter.higher_than(app.filtred_datas, col_name, int(col_min))    
             if f['type'] == str:
                 col_name = f['col_name']
                 col_equal = f['equal'].get() 
@@ -137,13 +138,14 @@ class FilterWindow(tk.Toplevel):
                     app.filtred_datas = filter.equals(app.filtred_datas, 'json', col_name, True)
                 if col_equal == "False":
                     app.filtred_datas = filter.equals(app.filtred_datas, 'json', col_name, False)
-            # if f['type'] == list:
-            #     col_name = f['col_name']
-            #     col_equal = f['value'].get()
-            #     if col_equal == "True":
-            #         app.filtred_datas = filter.equals(app.filtred_datas, 'json', col_name, True)
-            #     if col_equal == "False":
-            #         app.filtred_datas = filter.equals(app.filtred_datas, 'json', col_name, False)
+            if f['type'] == list:
+                col_name = f['col_name']
+                col_equal = f['len_equal'].get() 
+                col_contain = f['contain'].get()
+                if col_equal != "Length Equal":
+                    app.filtred_datas = filter.equals(app.filtred_datas, 'json', col_name, sort.convert(col_equal))
+                if col_contain == "Contain":
+                    app.filtred_datas = filter.contains(app.filtred_datas, 'json', col_name, col_contain)
             
             app.create_tree_widget(app.filtred_datas)
         self.destroy()
