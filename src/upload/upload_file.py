@@ -20,8 +20,32 @@ def open_json(filepath):
 def open_csv(filepath):
     try:
         with open(filepath, 'r', newline='') as file:
-            csv_reader = csv.DictReader(file)
-            data = [row for row in csv_reader]
+            csv_reader = csv.reader(file)
+            # red first line as head
+            header = next(csv_reader)
+            data = []
+            for row in csv_reader:
+                # convert to good format
+                row_data = {}
+                for index, value in enumerate(row):
+                    try:
+                        # try to convert to int
+                        value = float(value)  # convert first to float and if not float
+                        if value.is_integer():
+                            value = int(value)
+                    except ValueError:
+                        if ',' in value:
+                            value = [float(v.strip()) if '.' in v else int(v.strip()) for v in value.split(',')]
+                            print(value)
+                        elif value.lower() == 'true':
+                            value = True
+                        elif value.lower() == 'false':
+                            value = False
+                        else:
+                            # keep value as it is if can't convert to int
+                            pass
+                    row_data[header[index]] = value
+                data.append(row_data)
         return data
     except Exception as e:
         print(f"Error opening CSV file: {e}")
