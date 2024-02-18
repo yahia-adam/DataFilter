@@ -31,7 +31,7 @@ def calculate_bool_stats(data):
 def calculate_stats(datas, column_name, column_type):
     column_data = [item[column_name] for item in datas]
 
-    if column_type == int:
+    if column_type == int or column_type == float:
         return calculate_int_stats(column_data)
     elif column_type == str:
         return calculate_str_stats(column_data)

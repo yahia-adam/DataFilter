@@ -114,7 +114,7 @@ class FilterWindow(tk.Toplevel):
         
     def on_submit(self, app):
         for f in self.filters:
-            if f['type'] == int:
+            if f['type'] == int or f['type'] == float:
                 col_name = f['col_name']
                 col_min = f['min'].get()
                 col_max = f['max'].get()
