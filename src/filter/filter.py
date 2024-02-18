@@ -28,3 +28,19 @@ def contains (data, format, field, value):
     except KeyError:
         print(f"Field {field} not found")
         return data
+    
+def lower_than(data, field, max):
+    try:
+        data = [line for line in data if line[field] <= max]
+        return data
+    except KeyError:
+        print(f"Field {field} not found")
+        return data
+    
+def higher_than(data, field, min):
+    try:
+        data = [line for line in data if line[field] >= min]
+        return data
+    except KeyError:
+        print(f"Field {field} not found")
+        return data
