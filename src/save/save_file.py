@@ -6,7 +6,7 @@ Fevrier 2024
 
 import json
 import csv
-import xml.etree.ElementTree as ET
+import yaml
 
 def save_json(filepath, datas):
     try:
@@ -28,41 +28,26 @@ def save_csv(filepath, datas):
 
 
 def save_yaml(filepath, datas):
-    pass
-
-def save_xml(filepath, datas):
     try:
-        root = ET.Element("data")
-
-        for data in datas:
-            item = ET.SubElement(root, "item")
-            for key, value in data.items():
-                sub_element = ET.SubElement(item, key)
-                sub_element.text = str(value)
-
-        tree = ET.ElementTree(root)
-        tree.write(filepath)
-        
-        print(f"XML data saved to {filepath}")
+        with open(filepath, 'w') as file:
+            yaml.dump(datas, file, default_flow_style=False)
+        print(f"YAML data saved to {filepath}")
     except Exception as e:
-        print(f"Error saving XML data: {e}")
+        print(f"Error saving YAML data: {e}")
 
 def save_sa_file(filepath, datas):
-    allowed_file_types = ['json', 'csv', 'xml', 'yaml']
+    allowed_file_types = ['json', 'csv', 'yaml']
     filetype = filepath.split(".")[-1].lower()
     if filetype not in allowed_file_types:
         raise Exception(f'Only {", ".join(allowed_file_types)} files are accepted.')
 
-    if filetype == "json":
-        datas = save_json(filepath, datas)
+    if filetype == "yaml":
+        datas = save_yaml(filepath, datas)
         return datas
     elif filetype == "csv":
         datas = save_csv(filepath, datas)
         return datas
-    elif filetype == "yaml":
-        datas = save_yaml(filepath, datas)
-        return datas
     else:
-        datas = save_xml(filepath, datas)
+        datas = save_json(filepath, datas)
         return datas
     return None
