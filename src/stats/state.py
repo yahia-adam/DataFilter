@@ -5,6 +5,7 @@ def calculate_int_stats(data):
         "avg": sum(data) / len(data) if data else None
     }
 
+
 def calculate_float_stats(data):
     data = [number for number in data if isinstance(number, float)]
 
@@ -16,6 +17,7 @@ def calculate_float_stats(data):
         "avg": avg
     }
 
+
 def calculate_str_stats(data):
     lengths = [len(item) for item in data]
     return {
@@ -23,6 +25,7 @@ def calculate_str_stats(data):
         "len-max": max(lengths),
         "total-len": sum(lengths)
     }
+
 
 def calculate_list_stats(data):
     # flatten the list of lists into a single list
@@ -41,6 +44,7 @@ def calculate_list_stats(data):
         "avg": avg_val
     }
 
+
 def calculate_bool_stats(data):
     true_count = sum(1 for item in data if item)
     false_count = sum(1 for item in data if not item)
@@ -48,6 +52,7 @@ def calculate_bool_stats(data):
         "true": true_count,
         "false": false_count
     }
+
 
 def calculate_stats(datas, column_name, column_type):
     column_data = [item[column_name] for item in datas]

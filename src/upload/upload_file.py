@@ -34,7 +34,10 @@ def open_csv(filepath):
                         if value.is_integer():
                             value = int(value)
                     except ValueError:
-                        if value.lower() == 'true':
+                        if ',' in value:
+                            value = [float(v.strip()) if '.' in v else int(v.strip()) for v in value.split(',')]
+                            print(value)
+                        elif value.lower() == 'true':
                             value = True
                         elif value.lower() == 'false':
                             value = False
