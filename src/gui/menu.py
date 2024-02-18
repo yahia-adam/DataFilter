@@ -26,8 +26,8 @@ class AppMenu(Menu):
     
     def select_file(self, app):
         filetypes = (
-                ('CSV files', '*.csv'),
                 ('JSON files', '*.json'),
+                ('CSV files', '*.csv'),
                 ('All files', '*.*')
             )
 
