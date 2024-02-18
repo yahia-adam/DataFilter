@@ -39,6 +39,7 @@ class App(tk.Tk):
         self.tree_frame.grid(column=0, row=1)
 
     def create_tree_widget(self, datas):
+        # print(datas)
         if (self.tree_widget != None):
             self.clear_tree_frame()
         columns = list(datas[0].keys())
@@ -46,7 +47,7 @@ class App(tk.Tk):
         for col in columns:
             self.tree_widget.heading(col, text=col)
             self.tree_widget.column(col, anchor="center")
-        
+
         values = []
         for c in columns:
             values.append(str(calculate_stats(datas, c, type(datas[0][c]))))

@@ -5,6 +5,17 @@ def calculate_int_stats(data):
         "avg": sum(data) / len(data) if data else None
     }
 
+def calculate_float_stats(data):
+    data = [number for number in data if isinstance(number, float)]
+
+    avg = round(sum(data) / len(data), 2)
+
+    return {
+        "min": min(data),
+        "max": max(data),
+        "avg": avg
+    }
+
 def calculate_str_stats(data):
     lengths = [len(item) for item in data]
     return {
@@ -14,10 +25,20 @@ def calculate_str_stats(data):
     }
 
 def calculate_list_stats(data):
+    # flatten the list of lists into a single list
+    data = [item for sublist in data for item in sublist]
+
+    # convert the list to a set to get unique values
+    unique_values_set = set(data)
+
+    min_val = min(unique_values_set)
+    max_val = max(unique_values_set)
+    avg_val = round(sum(unique_values_set) / len(unique_values_set), 2)
+
     return {
-        "mean": sum(len(item) for item in data) / len(data) if data else None,
-        "min": min(len(item) for item in data) if data else None,
-        "max": max(len(item) for item in data) if data else None
+        "min": min_val,
+        "max": max_val,
+        "avg": avg_val
     }
 
 def calculate_bool_stats(data):
@@ -39,5 +60,7 @@ def calculate_stats(datas, column_name, column_type):
         return calculate_list_stats(column_data)
     elif column_type == bool:
         return calculate_bool_stats(column_data)
+    elif column_type == float:
+        return calculate_float_stats(column_data)
     else:
         return None
