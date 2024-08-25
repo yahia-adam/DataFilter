@@ -29,13 +29,12 @@ cd DataFilter                                               # Change to project 
 ### with venv
 ```bash
 python3 -m venv env                                         # Create python virtual envirements 
-pip install -r ./requirements/dependencies.txt              # Install project dependencies
+pip install -r ./requirements.txt              # Install project dependencies
 ```
 
 ### with docker
 ```bash
-docker build . -t datafilter # build docker image
-docker run datafilter # run docker image
+docker.sh
 ```
 ## Usage
 
@@ -50,14 +49,13 @@ python3 src/main.py
 |   |-- inputs                  <- Input datas
 |   |-- outputs                 <- Output datas
 |-- src                         <- Source files
-|-- requirements                <- Project requirements
-|   |-- dependencies.txt        <- python dependencies
-|   |-- sys_requirement.txt     <- system requirements
+|-- requirements.txt            <- Project requirements
 |-- Sujet                       <- project details
 |   |-- Sujet.pdf               <- Project Sujet
 |   |-- Syllabus.pdf            <- Project Syllabus
 |-- README                      <- Project README
 ```
+
 ## Contributors ✨
 
 
