@@ -5,12 +5,16 @@
 The aim of this project is to create a program for loading, saving, filtering,
 sort and display data from files in CSV Json XML or yaml format.
 
+
+Clicker video Demo
+
+[![Demo](https://img.youtube.com/vi/YH4DrGiIoMQ/0.jpg)](https://youtu.be/YH4DrGiIoMQ "Demo Video")
+
 ## Requirements
 
 ### See requirements
 ```
-cat requirements/sys_requirement.txt                        # system requirements
-cat requirements/dependencies.txt                           # python dependencies
+cat requirements.txt                           # python dependencies
 ```
 ### Install requirements
 ```
