@@ -34,7 +34,8 @@ pip install -r ./requirements.txt              # Install project dependencies
 
 ### with docker
 ```bash
-docker.sh
+docker_linux.sh # for linux user
+docker_mac.sh # for mac user
 ```
 ## Usage
 
