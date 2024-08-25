@@ -24,14 +24,19 @@ sudo dnf install python3 python3-pip python3-venv git       # red hat
 
 ```
 git clone git@github.com:yahia-adam/DataFilter.git          # Clone Repository 
-
 cd DataFilter                                               # Change to project Root Directory
-
+```
+### with venv
+```bash
 python3 -m venv env                                         # Create python virtual envirements 
-
 pip install -r ./requirements/dependencies.txt              # Install project dependencies
 ```
 
+### with docker
+```bash
+docker build . -t datafilter # build docker image
+docker run datafilter # run docker image
+```
 ## Usage
 
 ```
